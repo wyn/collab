@@ -7,6 +7,8 @@ The Collab system allows businesses to build efficient, safe and fault tolerant 
 
 Collab is based on the Extensible Messaging and Presence Protocol (XMPP), more information on XMPP can be found at <http://xmpp.org/>.
 
+Note that in this file a line beginning '$' refers to a shell command where-as a line beginning '>>>' means a command run from within the Python shell.
+
 Requirements:
 ----------------------------------------------------------------------------------------------------
 
@@ -40,6 +42,24 @@ b) clone the source code directly,
 $ cd <ROOT>
 $ git clone git://github.com/wyn/collab.git
 
+Testing:
+----------------------------------------------------------------------------------------------------
+
+Collab comes with a set of unit tests found in <COLLAB>/collab/test/ 
+Here <COLLAB> is the path to your collab source code: <ROOT>/collab/src/python/collab 
+(this directory should be the one with the setup.py script).
+
+To run them use the Twisted test runner Trial,
+
+$ cd <COLLAB>
+$ trial collab/test/*Tests.py
+
+See trial --help for more details about trial or read the Twisted documentation <http://twistedmatrix.com/trac/wiki/TwistedTrial>.
+
+Notes
+ - the tests are self contained and therefore do not require a connection to a running XMPP server.
+ - the -u flag can be useful for tracking down intermittent bugs, it tells trial to continually loop through the tests until an error occurs.
+
 Installation (optional):
 ----------------------------------------------------------------------------------------------------
 
@@ -48,11 +68,14 @@ To install use the standard setup.py script provided,
 $ cd <COLLAB>
 $ python setup.py install
 
-where <COLLAB> is the path to your collab source code, <ROOT>/src/python/collab (this directory should be the one with the setup.py script).
-
 Notes:
 The install step may need root permissions, use --prefix option if preferred.
-See python setup.py --help for other options.
+
+See 
+
+$ python setup.py --help 
+
+for other options.
 
 You should now be able to import collab from within your Python environment without errors:
 
@@ -66,21 +89,6 @@ if not then check that collab is reachable from your Python environment,
 >>> print sys.path
 
 or check that collab source code is reachable from your $PYTHONPATH environment variable.
-
-Testing:
-----------------------------------------------------------------------------------------------------
-
-Collab comes with a set of unit tests found in <COLLAB>/collab/test/
-To run them use the Twisted test runner Trial,
-
-$ cd <COLLAB>
-$ trial collab/test/*Tests.py
-
-See trial --help for more details about trial or read the Twisted documentation <http://twistedmatrix.com/trac/wiki/TwistedTrial>.
-
-Notes
- - the tests are self contained and therefore do not require a connection to a running XMPP server.
- - the -u flag can be useful for tracking down intermittent bugs, it tells trial to loop through the tests until an error occurs.
 
 Running a Collab service
 ----------------------------------------------------------------------------------------------------
@@ -159,6 +167,8 @@ Notes,
 
 $ kill `cat collab_proxy_var.pid`
 
+Please refer to the project wiki pages for more detailed information concerning the installation and configuration of the XMPP server.
+
 Resources
 ----------------------------------------------------------------------------------------------------
 
@@ -166,7 +176,7 @@ The Collab homepage is <https://github.com/wyn/collab>
 
 The wiki pages contain more detailed descriptions of the various steps described here, particularly the configuration of the XMPP server and running the Collab components.
 
-Here are some web resources I found useful:
+Here are some other web resources I found useful:
 
 Twisted:
 
