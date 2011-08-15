@@ -1,0 +1,7 @@
+twistd -n --pidfile='harness.pid' collab_test_harness --jid='portfoliosharness.master.local' --rport=10003
+twistd -n --pidfile='collab_distributions_manager.pid' collab_distributions_manager --jid='distributionsmanager.master.local' --rport=10002
+twistd -n --pidfile='collab_portfolios_manager.pid' collab_portfolios_manager --jid='portfoliosmanager.master.local' --rport=10001
+
+twistd -n --pidfile='collab_simulations_manager.pid' collab_simulations_manager --jid='simulationsmanager.master.local' --rport=10004 --rhost=master.local
+twistd -n --pidfile='collab_system_manager.pid' collab_system_manager --jid='collabmanager.master.local' --rport=10008 --rhost=master.local
+twistd -n --pidfile='collab_proxy.pid' collab_proxy --jid='collabproxy.master.local' --rport=10009 --rhost=master.local
