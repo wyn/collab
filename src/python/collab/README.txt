@@ -29,15 +29,16 @@ $ mkdir <ROOT>
 where <ROOT> is the path to where you want to keep collab.
 
 Then either 
-a) download the latest tarball from <pypi> to <ROOT> and unpack (here XXX refers to whatever collab version you have chosen), 
+;; not done yet
+;; a) download the latest tarball from <pypi> to <ROOT> and unpack (here XXX refers to whatever collab version you have chosen), 
 
-$ tar -xvf <ROOT>/collabXXX.tar.gz  
+;; $ tar -xvf <ROOT>/collabXXX.tar.gz  
 
 or
 b) clone the source code directly,
 
 $ cd <ROOT>
-$ git clone git://github.com/coshxltd/collab.git
+$ git clone git://github.com/wyn/collab.git
 
 Installation (optional):
 ----------------------------------------------------------------------------------------------------
@@ -47,7 +48,7 @@ To install use the standard setup.py script provided,
 $ cd <COLLAB>
 $ python setup.py install
 
-where <COLLAB> is the path to your collab source code, <ROOT>/collabXXX/src/python/collab for version XXX (this directory should be the one with the setup.py script).
+where <COLLAB> is the path to your collab source code, <ROOT>/src/python/collab (this directory should be the one with the setup.py script).
 
 Notes:
 The install step may need root permissions, use --prefix option if preferred.
@@ -161,7 +162,7 @@ $ kill `cat collab_proxy_var.pid`
 Resources
 ----------------------------------------------------------------------------------------------------
 
-The Collab homepage is <https://github.com/coshxltd/collab>.  
+The Collab homepage is <https://github.com/wyn/collab>
 
 The wiki pages contain more detailed descriptions of the various steps described here, particularly the configuration of the XMPP server and running the Collab components.
 
