@@ -3,7 +3,7 @@ About:
 
 Collab, the power of cloud computing effortlessly built out of your current hardware.
 
-The Collab system allows businesses to build efficient, safe and fault tolerant modeling systems by combining the power of their existing computing infrastructure.
+The Collab system allows businesses to build efficient, safe and fault tolerant modeling systems by consolidating the power of their existing computing infrastructure.
 
 Collab is based on the Extensible Messaging and Presence Protocol (XMPP), more information on XMPP can be found at <http://xmpp.org/>.
 
@@ -16,6 +16,7 @@ Requirements:
  - Twisted 10.1.0 or higher
  - Wokkel 0.6.3 or higher
  - Scipy 0.9.0 or higher
+
  - Pysparse 1.2 or higher (if using the 'sparse' copula)
  - Mock 0.7.2 or higher (for tests only)
 
@@ -69,7 +70,7 @@ $ cd <COLLAB>
 $ python setup.py install
 
 Notes:
-The install step may need root permissions, use --prefix option if preferred.
+The install step may need root permissions, use --prefix or --user option if you do not have root permissions.
 
 See 
 
@@ -95,7 +96,7 @@ Running a Collab service
 
 For this section you will need a running XMPP server configured correctly.
 
-Collab services are run as external XMPP components implemented as Twisted plugins.  From within the <COLLAB> directory you should be able to view the plugins using the twistd plugin harness,
+Collab services are run as external XMPP components implemented as Twisted plugins.  From within the <COLLAB> directory you should be able to view the Collab plugins using the twistd (note lack of 'e') command line harness,
 
 $ cd <COLLAB>
 $ twistd --help
@@ -156,8 +157,8 @@ A successful start should simply log some startup and handshake messages, an uns
 $ twistd -n --pidfile='collab_proxy_var.pid' collab_proxy_var --jid='collabproxyvar.collab.coshx' --rport=10001 --rhost=collab.coshx --secret='password' --verbose
 
 The salient points here are:
- - Get the name of the service correct, e.g. collab_proxy_var.  This is the command NAME for twistd not ejabberd.
- - The jid of the service matches the name in the 'hosts' entry of the ejabberd_service entry e.g. collabproxyvar.collab.coshx.
+ - Get the name of the service correct, e.g. 'collab_proxy_var'.  This is the command NAME for twistd not ejabberd.
+ - The jid of the service matches the name in the 'hosts' entry of the ejabberd_service entry e.g. 'collabproxyvar.collab.coshx'.
  - The rport and rhost match up to the configured settings and that there is a virtual host on the XMPP server called 'collab.coshx'.
  - The --secret matches the configured 'password' setting for that listener.
 

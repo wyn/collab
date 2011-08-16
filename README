@@ -1,0 +1,13 @@
+Aspiration:
+----------------------------------------------------------------------------------------------------
+
+Collab, the power of cloud computing effortlessly built out of your current hardware.
+
+The Collab system allows businesses to build efficient, safe and fault tolerant modeling systems by consolidating the power of their existing computing infrastructure.
+
+
+Why efficient?  A modelling task e.g. a lengthy risk management analysis, that takes ten hours to run on a single machine will run in one hour if distributed to ten machines simultaneously.  Any modern small business with, say, ten employees will have ten desktop PCs set up and networked so that employees can share files, access shared drives or printing facilities and message each other.  Collab makes use of a bespoke messaging system that allows PCs such as this to collaborate and perform lengthy calculations in a more efficient manner.  Computers can join and leave the Collab system with the same ease that you add and remove friends on your favorite instant messaging network.  Any computer downtime can therefore be recycled to add to the power of your Collab system.
+
+Why safe?  The Collab system sits behind any firewalls that protect your corporate network from the public internet.  There is no need to send your data or proprietory algorithms out to a remote cloud service, owned by another company to run on machines that you don't ultimately control.  The Collab system also allows fully authenticated and encrypted communications between any of its components.  It is therefore possible to safely collaborate with computers in separate regions over the public internet.  This allows a growing international business to take advantage of downtime resulting from changing timezones of different locales.
+
+Why fault tolerant?  The Collab system is designed to allow computers to join and leave the network at will.  If a computer goes down the Collab system carries on.  These presence changes are monitored in real time and any unusual behavior can be investigated immediately.  All aspects of the Collab system can be backed up to other computers in your corporate network hence full disaster recovery can be achieved by replicating the whole system to some specified location.  Fault tolerance is also important as your business grows and changes.  A huge amount of downtime in production systems results from migrations to new and better hardware or the introduction of new prototype software components.  The Collab system's flexibility allows you to introduce new features incrementally; a component can take input from the live system but output to a test area.  This allows new components or prototype models to be tested on live data without affecting the live system.
