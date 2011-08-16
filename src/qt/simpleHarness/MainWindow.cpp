@@ -27,6 +27,8 @@ MainWindow::MainWindow(QWidget *parent) :
     ui->setupUi(this);
     ui->horizontalSlider->setValue(MainWindow::default_number_runs);
     ui->lineEdit_numberRuns->setText(QString::number(MainWindow::default_number_runs*MainWindow::run_factor));
+    ui->actionUnregister->setEnabled(false);
+    ui->actionRegister->setEnabled(true);
 
     connect(ui->actionRegister, SIGNAL(triggered()), this, SLOT(onRegister_triggered()));
     connect(ui->actionUnregister, SIGNAL(triggered()), this, SLOT(onUnregister_triggered()));
@@ -45,7 +47,7 @@ MainWindow::MainWindow(QWidget *parent) :
 
 MainWindow::~MainWindow()
 {
-    // unregister if still registered
+    // gets unregistered if still registered on destruction of QXMPP
     delete ui;
 }
 
@@ -60,6 +62,9 @@ void MainWindow::onConnected()
                 .arg(config.jid())
                 );
 
+    ui->actionUnregister->setEnabled(true);
+    ui->actionRegister->setEnabled(false);
+
 }
 
 void MainWindow::onDisconnected()
@@ -72,6 +77,10 @@ void MainWindow::onDisconnected()
                 .arg(config.port())
                 .arg(config.jid())
                 );
+
+    ui->actionUnregister->setEnabled(false);
+    ui->actionRegister->setEnabled(true);
+
 }
 
 void MainWindow::onError(const QXmppClient::Error &err)
@@ -279,14 +288,15 @@ void MainWindow::onUnregister_triggered()
 void MainWindow::onRun_triggered()
 {
     if (!this->xmppWrapper->isConnected()) {
+        QMessageBox::warning(this, "Please register", "You need to register with a Collab service first");
         this->onRegister_triggered();
     }
     else {
-        const QXmppConfiguration &config(r.getConfiguration());
-        QXmppIq details(QXmppIq::Set);
+//        const QXmppConfiguration &config(r.getConfiguration());
+//        QXmppIq details(QXmppIq::Set);
 
-        // make portfolio stanza and send off to be run
-        this->xmppWrapper->start(details);
+//        // make portfolio stanza and send off to be run
+//        this->xmppWrapper->start(details);
     }
 }
 
